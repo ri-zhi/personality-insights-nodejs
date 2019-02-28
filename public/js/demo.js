@@ -210,15 +210,11 @@ $(document).ready(function() {
       }
     });
 
-    $('input[name="twitter"]').click(function() {
-      var twitterId = $(this).val();
-      var twitterLang = $(this).attr('data-lang');
-      globalState.selectedTwitterUser = twitterId;
-      globalState.selectedTwitterImage = $('label[for="' + $(this).attr('id') + '"] img').attr('src');
-      globalState.selectedTwitterUserLang = twitterLang;
-    });
-
     $inputForm1.submit(function(e) {
+      var twitterId = $('input[name="twitter"]').val();
+      var twitterLang = $('input[name="twitter"]').attr('data-lang');
+      globalState.selectedTwitterUser = twitterId;
+      globalState.selectedTwitterUserLang = twitterLang;
       e.cancelBubble = true;
       e.preventDefault();
       if (e.stopPropagation)

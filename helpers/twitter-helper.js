@@ -16,18 +16,6 @@
 const twitter = require('twitter');
 const MAX_COUNT = 200;
 
-const tweetsFor = (user) =>
-  require(`../public/data/twitter/${user.userId}_tweets.json`);
-
-const getLocalTweets = (user) =>
-  new Promise((resolve) => {
-    try {
-      resolve(tweetsFor(user));
-    } catch(error) {
-      resolve(null);
-    }
-  });
-
 /**
 * Get the tweets based on the given screen_name.
 * Implemented with recursive calls that fetch up to 200 tweets in every call
@@ -66,10 +54,7 @@ const getTweetsFromTwitter = (user) =>
   });
 
 const getTweets = (user) =>
-  getLocalTweets(user)
-    .then((tweets) =>
-      tweets ? tweets : getTweetsFromTwitter(user)
-    );
+  getTweetsFromTwitter(user);
 
 
 module.exports = { getTweets };

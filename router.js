@@ -36,8 +36,14 @@ module.exports = (app) => {
       return next({ code: 400, error: 'Missing required parameters: userId' });
     }
 
+
     const user = {
-      credentials : req.user ? req.user.credentials : null,
+      credentials : {
+        consumer_key: process.env.TWITTER_CONSUMER_KEY,
+        consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+        access_token_key: process.env.TWITTER_ACCESS_TOKEN,
+        access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+      },
       userId: req.body.userId,
     };
 

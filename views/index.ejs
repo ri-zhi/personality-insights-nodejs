@@ -31,11 +31,6 @@
               <$= __("tab-body") $>
             </a>
           </li>
-          <li class="tab-panels--tab-list-item base--li" style="<% if (showTwitterButton) { %>display: none;<% } %>" role="presentation">
-            <a class="tab-panels--tab base--a" id="self-analysis-tab" href="#your-twitter-panel" aria-controls="text-panel" role="tab">
-              <$= __("tab-twitter") $>
-            </a>
-          </li>
         </ul>
         <div class="tab-panels--tab-content">
           <div id="twitter-panel" class="tab-panels--tab-pane active" role="tab-panel">
@@ -45,32 +40,8 @@
                 <$= __("option-choose") $>
               </div>
 
-              <input role="radio" class="base--radio" type="radio" id="twitter-Oprah" name="twitter" value="Oprah" data-lang="en">
-              <label class="base--inline-label input--radio" for="twitter-Oprah">
-                <img class="input--thumb" src="/images/twitter/oprah.png">@Oprah (<$= __("twitterlang-en") $>)</label>
+              <input type="text" name="twitter" value="" data-lang="ja">
 
-              <input role="radio" class="base--radio" type="radio" id="twitter-KingJames" name="twitter" value="KingJames" data-lang="en">
-              <label class="base--inline-label input--radio" for="twitter-KingJames">
-                <img class="input--thumb" src="/images/twitter/kingjames.jpg">@KingJames (<$= __("twitterlang-en") $>)</label>
-
-              <input role="radio" class="base--radio" type="radio" id="twitter-DonFranciscoTV" name="twitter" value="DonFranciscoTV" data-lang="es">
-              <label class="base--inline-label input--radio" for="twitter-DonFranciscoTV">
-                <img class="input--thumb" src="/images/twitter/DonFranciscoTV.jpg">@DonFranciscoTV (<$= __("twitterlang-es") $>)</label>
-
-              <input role="radio" class="base--radio" type="radio" id="twitter-pontifex_es" name="twitter" value="pontifex_es" data-lang="es">
-              <label class="base--inline-label input--radio" for="twitter-pontifex_es">
-                <img class="input--thumb" src="/images/twitter/pontifex_es.jpg">@pontifex_es (<$= __("twitterlang-es") $>)</label>
-
-              <input role="radio" class="base--radio" type="radio" id="twitter-trikaofficial" name="twitter" value="trikaofficial" data-lang="ar">
-              <label class="base--inline-label input--radio" for="twitter-trikaofficial">
-                <img class="input--thumb" src="/images/twitter/trikaofficial.jpg">@trikaofficial (<$= __("twitterlang-ar") $>)</label>
-
-              <input role="radio" class="base--radio" type="radio" id="twitter-faridyu" name="twitter" value="faridyu" data-lang="ja">
-              <label class="base--inline-label input--radio" for="twitter-faridyu">
-                <img class="input--thumb" src="/images/twitter/faridyu.jpg">@faridyu (<$= __("twitterlang-ja") $>)</label>
-              <input role="radio" class="base--radio" type="radio" id="twitter-Krungy21" name="twitter" value="Krungy21" data-lang="ko">
-              <label class="base--inline-label input--radio" for="twitter-Krungy21">
-                <img class="input--thumb" src="/images/twitter/Krungy21.jpg">@Krungy21 (<$= __("twitterlang-ko") $>)</label>
               <div class="input--button-container">
                 <button type="submit" class="base--button input--submit-button1"><$= __("button-analyze") $></button>
               </div>
@@ -119,23 +90,6 @@
               </div>
 
             </form>
-          </div>
-          <div id="your-twitter-panel" class="tab-panels--tab-pane" role="tab-panel">
-            <form class="input--form3 auth-form" method='get' action='/auth/twitter'>
-              <p class="base--p" style="text-align:center"><button type="submit" class="base--button input--submit-button3"><$= __("button-analyzetwitter") $></button></p>
-              <p class="base--p"><strong><$= __("note-title") $></strong>
-                <$= __("note-twitter") $>
-                  <p>
-            </form>
-            <form class="input-form4 analysis-form" style="display:none">
-              <div class="base--h5 input--choose">
-                <$= __("analysis-title") $>
-              </div>
-              <input role="radio" class="base--radio" type="radio" id="my-twitter" name="twitter" value="myself">
-              <label class="base--inline-label input--radio" for="my-twitter">
-                <img class="input--thumb" src="/images/no-image.png">@<$= __("label-myself") $></label>
-            </form>
-          </div>
         </div>
       </div>
     </div>
